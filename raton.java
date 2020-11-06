@@ -1,4 +1,4 @@
-public class raton {
+public class Raton {
     // Marca del ratón
     private String marca;
     // Número de DPI del ratón
@@ -6,7 +6,7 @@ public class raton {
     // Es inalámbrico?
     private boolean inalambrico;
     
-    public raton (String marcaRaton, int numeroDpi) {
+    public Raton (String marcaRaton, int numeroDpi) {
         marca = marcaRaton;
         dpi = numeroDpi;
         inalambrico = true;
@@ -24,9 +24,8 @@ public class raton {
         return inalambrico;
     }
     
-    public String setMarca (String nuevaMarca) {
+    public void setMarca (String nuevaMarca) {
         marca = nuevaMarca;
-        return marca;
     }
     
     public void subirDpi (int incrementoDpi) {
@@ -43,13 +42,26 @@ public class raton {
     }
     
     public void imprimirCaracteristicas () {
-        System.out.println("Marca del raton: " + marca + "|Numero de DPI: " + dpi + "|Inalámbrico: " + inalambrico);
+        String sinCable;
+        if (inalambrico == true) {
+            sinCable = "si";
+        }
+        else {
+            sinCable = "no";
+        }
+        System.out.println("Marca del ratón: " + marca + "|Número de DPI: " + dpi + "|Inalámbrico: " + sinCable);
     }
     
     public String getCaracteristicas () {
         String caracteristicas;
-        caracteristicas = "Marca del raton: " + marca + "|Numero de DPI: " + dpi + "|Inalámbrico: " + inalambrico;
+        String sinCable;
+        if (inalambrico == true) {
+            sinCable = "si";
+        }
+        else {
+            sinCable = "no";
+        }
+        caracteristicas = "Marca del ratón: " + marca + "|Número de DPI: " + dpi + "|Inalámbrico: " + sinCable;
         return caracteristicas;
     }
-    
 }
